@@ -1,3 +1,5 @@
+// tricky
+
 class Message {
     getContent() {
         throw new Error('This method should be overridden!');
@@ -35,7 +37,7 @@ class CompressedMessage extends MessageDecorator {
 
 const simpleMessage = new SimpleMessage();
 const encryptedMessage = new EncryptedMessage(simpleMessage);
-const compressedMessage = new CompressedMessage(encryptedMessage);
+const compressedMessage = new `CompressedMessage`(encryptedMessage);
 
 console.log(simpleMessage.getContent()); // This is a simple message.
 console.log(encryptedMessage.getContent()); // Encrypted(This is a simple message.)

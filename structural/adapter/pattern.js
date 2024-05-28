@@ -10,7 +10,7 @@ class NewPrinter {
     }
 }
 
-class PrinterAdapter {
+class NewPrinterAdapter {
     constructor(newPrinter) {
         this.newPrinter = newPrinter;
     }
@@ -23,11 +23,11 @@ class PrinterAdapter {
 const oldPrinter = new OldPrinter();
 
 const newPrinter = new NewPrinter();
-const adapter = new PrinterAdapter(newPrinter);
+const newPrinterAdapter = new NewPrinterAdapter(newPrinter);
 
 function printSomething(printer, text) {
     printer.print(text);
 }
 
 printSomething(oldPrinter, "Hello World!");
-printSomething(adapter, "Hello World!"); // Works: Printing Document: Hello World!
+printSomething(newPrinterAdapter, "Hello World!"); // Works: Printing Document: Hello World!
